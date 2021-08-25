@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gege's Confectionary</title>
+</head>
+
+<body>
+    <h1>Welcome to Gege's Confectionary</h1>
+    <p>For all things confectionary</p>
+    <h3>To build the server­side component of a confectionary application. The web application will provide the owner
+        with the ability to add, update, edit and remove products on the front end.</h3>
+
+    <table class="url_endpoints">
+        <tr>
+            <th>Request</th>
+            <th>URL</th>
+            <th>HTTP Method</th>
+            <th>Request body data format</th>
+            <th>Response body data format</th>
+        </tr>
+        <tr>
+            <td>Return a list of ALL products</td>
+            <td>/product</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>
+                A JSON object holding data about ALL products
+            </td>
+        </tr>
+        <tr>
+            <td>Return data (title, description, price) about a single product
+                by
+                title</td>
+            <td>/product/title</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>
+                a JSON object holding data about a single movie by title like this:
+                {
+                    category: "sweet",
+                    title: "Birthday cake" ,
+                    image: "angelcake",
+                    description: "This a vanilla angel cake",
+                    price: 50
+                },
+
+            </td>
+        </tr>
+        <tr>
+            <td>Return data about a category</td>
+            <td>/product/category</td>
+            <td>GET</td>
+            <td>None</td>
+            <td>
+                a JSON object holding data about products in a category by title like this:
+                {
+                title: "Birthday cake",
+                category: "sweet"
+                },
+            </td>
+        </tr>
+        <tr>
+            <td>Allow new products to be added</td>
+            <td>/product</td>
+            <td>POST</td>
+            <td>A JSON object holding information like this: 
+                ID: integer,
+                title: string,
+                category: string,
+                image: img,
+                description: string,
+                price: integer
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Allow products info to be updated by title</td>
+            <td>/product/title</td>
+            <td>PUT</td>
+            <td>
+                A JSON object holding data about the user info to update, structured like:
+                {
+                title: string,
+                (required)
+                image: img,
+                (required)
+                category: string,
+                (required)
+                description: string,
+                (required)
+                price: integer
+                }
+            </td>
+            <td>
+                A text message indicating the info has been updated sucessfully.
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                Allow product to be deleted
+            </td>
+            <td>/product/title</td>
+            <td>DELETE</td>
+            <td>None</td>
+            <td>
+                A text message indicating the product was deleyed 
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
